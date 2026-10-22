@@ -10,7 +10,7 @@
 BIM2WNTR is an open-source Python tool that automates the conversion of Industry Foundation Classes (IFC) building information models to Water Network Tool for Resilience (WNTR) hydraulic models. This enables hydraulic analysis of premise plumbing systems directly from BIM data, supporting digital twin development for building water systems.
 
 **Supplementary material for:**
-> Lee, J. (2025). "Automated Conversion of Building Information Models to Hydraulic Network Models for Premise Plumbing Analysis." *ASCE Journal of Computing in Civil Engineering*. (Technical Note)
+> Lee, J., and Williams, J. (2025). "Automated Conversion of Building Information Models to Hydraulic Network Models for Premise Plumbing Analysis." *ASCE Journal of Computing in Civil Engineering*. (Technical Note, under review)
 
 ## Features
 
@@ -180,11 +180,11 @@ If you use this tool in your research, please cite:
 
 ```bibtex
 @article{lee2025bim2wntr,
-  title={Automated Conversion of Building Information Models to Hydraulic Network Models for Premise Plumbing Analysis},
-  author={Lee, Juneseok},
-  journal={ASCE Journal of Computing in Civil Engineering},
-  year={2025},
-  note={Technical Note}
+     title={Automated Conversion of Building Information Models to Hydraulic Network Models for Premise Plumbing Analysis},
+     author={Lee, Juneseok and Williams, Jeremy},
+     journal={ASCE Journal of Computing in Civil Engineering},
+     year={2025},
+     note={Technical Note, under review}
 }
 ```
 
