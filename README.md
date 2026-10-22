@@ -20,7 +20,8 @@ BIM2WNTR is an open-source Python tool that automates the conversion of Industry
 - **System Filtering**: Isolate Domestic Cold Water (DCW) systems
 - **Fixture-Based Demands**: Assign demands based on IPC/UPC fixture flow rates
 - **Diversity Factor**: Apply Hunter's curve methodology for realistic demand scenarios
-- **EPANET Export**: Generate simulation-ready INP files with proper coordinates
+- **OD to ID Conversion**: Copper Type L wall thickness lookup (ASTM B88) for accurate hydraulic diameters (v1.1.0)
+- **EPANET Export**: Generate simulation-ready INP files with proper LPS unit conversions (v1.2.0)
 
 ## Installation
 
@@ -140,12 +141,14 @@ A diversity factor based on Hunter's curve is applied to account for the probabi
 | Number of Fixtures | Diversity Factor |
 |--------------------|------------------|
 | 1 | 1.00 |
-| 2-5 | 0.80 |
-| 6-10 | 0.60 |
-| 11-20 | 0.40 |
-| 21-50 | 0.30 |
-| 51-100 | 0.25 |
-| >100 | 0.20 |
+| 2-5 | 0.70 |
+| 6-10 | 0.50 |
+| 11-20 | 0.30 |
+| 21-50 | 0.20 |
+| 51-100 | 0.18 |
+| >100 | 0.15 |
+
+*Updated in v1.1.0 based on industry feedback (actual simultaneous use often 15–20% for residential).*
 
 ## IFC Requirements
 
@@ -184,6 +187,22 @@ If you use this tool in your research, please cite:
   note={Technical Note}
 }
 ```
+
+## Changelog
+
+### v1.2.0
+- Fixed INP writer field-width overflow causing merged elevation+demand values
+- Fixed unit conversion for ALL junctions (elevation ft→m), not just demand nodes
+- Added reservoir head conversion (ft→m)
+- INP files now fully self-consistent in LPS units
+
+### v1.1.0
+- Added copper Type L wall thickness lookup for OD→ID conversion (ASTM B88)
+- Updated diversity factor values based on industry feedback (0.20 for 21–50 fixtures)
+- Pipe diameters now reported as inside diameter (ID) for hydraulic accuracy
+
+### v1.0.0
+- Initial release: IFC extraction, topology reconstruction, WNTR model generation
 
 ## Author
 
